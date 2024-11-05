@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Create Tourist Destination</h1>
+    <form method="post" enctype="multipart/form-data" class="border p-3">
+        {% csrf_token %}
+
+        <div class="form-group border p-3">
+            {{ form.place_name.label_tag }}
+            {{ form.place_name }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.weather.label_tag }}
+            {{ form.weather }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.location_state.label_tag }}
+            {{ form.location_state }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.location_district.label_tag }}
+            {{ form.location_district }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.google_map_link.label_tag }}
+            {{ form.google_map_link }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.image.label_tag }}
+            {{ form.image }}
+        </div>
+
+        <div class="form-group border p-3">
+            {{ form.description.label_tag }}
+            {{ form.description }}
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary border p-3">Save</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

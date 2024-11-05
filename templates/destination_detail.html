@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title text-center">{{ destination.place_name }}</h1>
+        <p class="card-text"><strong>Weather:</strong> {{ destination.weather }}</p>
+        <p class="card-text"><strong>Location:</strong> {{ destination.location_state }}, {{ destination.location_district }}</p>
+        {% if destination.image %}
+            <img src="{{ destination.image }}" alt="{{ destination.place_name }}" class="img-fluid mt-3">
+        {% endif %}
+        <p><a href="{{ destination.google_map_link }}" class="btn btn-primary">View on Google Maps</a></p>
+        <div class="border p-3 mt-3">
+            <p class="card-text"><strong>Description:</strong> {{ destination.description }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
